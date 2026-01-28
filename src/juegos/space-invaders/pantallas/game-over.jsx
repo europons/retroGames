@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import naveRota from '../imagenes/nave-rota2.webp';
+import sonidoGameOver from '../sonidos/sonido-game-over.mp3';
 
 export default function GameOver( props) {
 
@@ -21,7 +23,7 @@ export default function GameOver( props) {
     }, []);      
 
     useEffect(() => {
-        const audio = new Audio("/sonidos/sonido-game-over.mp3");
+        const audio = new Audio(sonidoGameOver);
         audio.volume = 0.3;
         audio.play().catch(() => {});
 
@@ -41,7 +43,7 @@ export default function GameOver( props) {
             </div>
 
             <img
-                src="/imagenes/nave-rota2.webp"
+                src={naveRota}
                 alt="Nave"
                 className={`nave-inicio ${animarNave ? "nave-inicio-animar" : ""}`}
                 onAnimationEnd={() => setAnimarNave(false)}

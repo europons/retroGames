@@ -1,4 +1,19 @@
 import { useRef, useEffect } from 'react';
+import naveNormal from '../imagenes/nave.webp';
+import naveRota1 from '../imagenes/nave-rota1.webp';
+import naveRota2 from '../imagenes/nave-rota2.webp';
+import alien1 from '../imagenes/alien1.webp';
+import alien2 from '../imagenes/alien2.webp';
+import alien3 from '../imagenes/alien3.webp';
+import balaNave from '../imagenes/bala-nave.webp';
+import balaAlien from '../imagenes/bala-alien.webp';
+import alienEspecial from '../imagenes/alien-especial.webp';
+import sonidoDisparo from '../sonidos/disparo.mp3';
+import sonidoAlienMuere from '../sonidos/alien-muere.mp3';
+import sonidoRestaVida from '../sonidos/resta-vida.mp3';
+import sonidoVictoria from '../sonidos/victoria.mp3';
+import sonidoExplosion from '../sonidos/explosion.mp3';
+import sonidoFondo from '../sonidos/musica-fondo.mp3';
 
 export function Canvas(props) {
 
@@ -72,32 +87,32 @@ export function Canvas(props) {
     //********************************//
     //SONIDOS//
     if (!sonidoDisparoRef.current) {
-        sonidoDisparoRef.current = new Audio("/sonidos/disparo.mp3");
+        sonidoDisparoRef.current = new Audio(sonidoDisparo);
         sonidoDisparoRef.current.volume = 0.3  ;
     }
 
     if (!sonidoAlienMuereRef.current) {
-        sonidoAlienMuereRef.current = new Audio("/sonidos/alien-muere.mp3");
+        sonidoAlienMuereRef.current = new Audio(sonidoAlienMuere);
         sonidoAlienMuereRef.current.volume = 0.3;
     }
 
     if (!sonidoRestarVidaRef.current) {
-        sonidoRestarVidaRef.current = new Audio("/sonidos/resta-vida.mp3");
+        sonidoRestarVidaRef.current = new Audio(sonidoRestaVida);
         sonidoRestarVidaRef.current.volume = 0.3;
     }
 
     if (!sonidoAlienEspecialRef.current) {
-        sonidoAlienEspecialRef.current = new Audio("/sonidos/victoria.mp3");
+        sonidoAlienEspecialRef.current = new Audio(sonidoVictoria);
         sonidoAlienEspecialRef.current.volume = 0.5;
     }
 
     if (!sonidoExplosionRef.current) {
-        sonidoExplosionRef.current = new Audio("/sonidos/explosion.mp3");
+        sonidoExplosionRef.current = new Audio(sonidoExplosion);
         sonidoExplosionRef.current.volume = 0.5;
     }
 
     if (!sonidoFondoRef.current) {
-        sonidoFondoRef.current = new Audio("/sonidos/musica-fondo.mp3");
+        sonidoFondoRef.current = new Audio(sonidoFondo);
         sonidoFondoRef.current.volume = 0.2;
         sonidoFondoRef.current.loop = true;
     }
@@ -456,33 +471,33 @@ export function Canvas(props) {
     // useEffect → cargar imágenes 
     useEffect(() => {
         naveNormalRef.current = new Image();
-        naveNormalRef.current.src = "/imagenes/nave.webp";
+        naveNormalRef.current.src = naveNormal;
 
         naveRota1Ref.current = new Image();
-        naveRota1Ref.current.src = "/imagenes/nave-rota1.webp";
+        naveRota1Ref.current.src = naveRota1;
 
         naveRota2Ref.current = new Image();
-        naveRota2Ref.current.src = "/imagenes/nave-rota2.webp";
+        naveRota2Ref.current.src = naveRota2;
 
         naveImgRef.current = naveNormalRef.current;
 
         alien1ImgRef.current = new Image();
-        alien1ImgRef.current.src = "/imagenes/alien1.webp";
+        alien1ImgRef.current.src = alien1;
 
         alien2ImgRef.current = new Image();
-        alien2ImgRef.current.src = "/imagenes/alien2.webp";
+        alien2ImgRef.current.src = alien2;
 
         alien3ImgRef.current = new Image();
-        alien3ImgRef.current.src = "/imagenes/alien3.webp";
+        alien3ImgRef.current.src = alien3;
 
         balaNaveImgRef.current = new Image();
-        balaNaveImgRef.current.src = "/imagenes/bala-nave.webp";
+        balaNaveImgRef.current.src = balaNave;
 
         balaAlienImgRef.current = new Image();
-        balaAlienImgRef.current.src = "/imagenes/bala-alien.webp";
+        balaAlienImgRef.current.src = balaAlien;
 
         alienEspecialImgRef.current = new Image();
-        alienEspecialImgRef.current.src = "/imagenes/alien-especial.webp";
+        alienEspecialImgRef.current.src = alienEspecial;
     }, []);
 
     useEffect(() => {

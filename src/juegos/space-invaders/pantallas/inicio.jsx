@@ -1,4 +1,9 @@
 import { useEffect, useState } from "react";
+import nave from '../imagenes/nave.webp';
+import alien1 from '../imagenes/alien1.webp';
+import alien2 from '../imagenes/alien2.webp';
+import alien3 from '../imagenes/alien3.webp';
+import alienEspecial from '../imagenes/alien-especial.webp';
 
 export default function Inicio({ iniciarPartida }) {
 
@@ -27,7 +32,7 @@ export default function Inicio({ iniciarPartida }) {
             <div className="contenedor-inicial">
                <h1 className="titulo-inicial">Space Invaders</h1>
                 <img
-                    src="/imagenes/nave.webp"
+                    src={nave}
                     alt="Nave"
                     className={`nave-inicio ${animarNave ? "nave-inicio-animar" : ""}`}
                     onAnimationEnd={() => setAnimarNave(false)}
@@ -50,22 +55,22 @@ export default function Inicio({ iniciarPartida }) {
                 <div className="contenedor-aliens">
                     <div className="tipo-alien">
                         <p className="puntos-por-alien">10 puntos</p>
-                        <img src="/imagenes/alien1.webp" alt="Alien tipo 1" />
+                        <img src={alien1} alt="Alien tipo 1" />
                     </div>
                     
                     <div className="tipo-alien">
                         <p className="puntos-por-alien">20 puntos</p>
-                        <img src="/imagenes/alien2.webp" alt="Alien tipo 2" />
+                        <img src={alien2} alt="Alien tipo 2" />
                     </div>
 
                     <div className="tipo-alien">
                         <p className="puntos-por-alien">30 puntos</p>
-                        <img src="/imagenes/alien3.webp" alt="Alien tipo 3" />
+                        <img src={alien3} alt="Alien tipo 3" />
                     </div>
 
                     <div className="tipo-alien">
                         <p className="puntos-por-alien">100 puntos</p>
-                        <img src="/imagenes/alien-especial.webp" alt="Alien especial" id="alien-especial" />
+                        <img src={alienEspecial} alt="Alien especial" id="alien-especial" />
                     </div>
                 </div>
             </div>
