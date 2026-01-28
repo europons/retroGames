@@ -22,6 +22,11 @@ export default function SuperHopper() {
         setFinPartida(false);
     }
 
+    function gameOver(scoreFinal) {
+        setScore(scoreFinal);
+        setFinPartida(true);
+    }
+
     // PANTALLA INICIAL
     if (!partidaEmpezada) {
         return(
@@ -45,7 +50,7 @@ export default function SuperHopper() {
     // PANTALLA DEL JUEGO
     return (
         <>
-            <PantallaJuego score={score} />
+            <PantallaJuego score={score} gameOver={gameOver} />
             <Instrucciones />
         </>
     );
