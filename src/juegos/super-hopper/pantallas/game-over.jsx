@@ -3,7 +3,7 @@ export default function GameOver(props) {
         <div id="game-over-screen" className="center-screen">
             <h1 className="title">GAME OVER</h1>
             <p className="subtitle">SCORE: <span id="final-score">{props.score}</span></p>
-            <button id="restart-btn">TRY AGAIN</button>
+            <button id="restart-btn" onClick={props.reiniciarPartida}>TRY AGAIN</button>
         </div>
     );
 }
