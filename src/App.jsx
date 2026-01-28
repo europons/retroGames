@@ -1,11 +1,12 @@
+import { useNavigate, Outlet } from "react-router-dom";
+
 import './App.css'
-import SpaceInvaders from './juegos/space-invaders/space-invaders.jsx'
-import portadaInvaders from '../imagenes/space-invaders.png'
-import portadaHopper from '../imagenes/super-hopper.png'
+import portadaInvaders from './imagenes/space-invaders.png'
+import portadaHopper from './imagenes/super-hopper.png'
 import BotonJuego from './componentes/boton-juego.jsx'
 
 function App() {
-  
+  const navigate = useNavigate();
 
   return (
     <div className="app">
@@ -15,14 +16,15 @@ function App() {
         <BotonJuego
           image={portadaInvaders}
           title="Space Invaders"
-          onClick={() => console.log('Space Invaders')}
+          onClick={() => navigate("/space-invaders")}
         />
         <BotonJuego
           image={portadaHopper}
           title="Super Hopper"
-          onClick={() => console.log('Super Hopper')}
+          onClick={() => navigate("super-hopper")}
         />
       </div>
+      <Outlet />
     </div>
 
   )
