@@ -130,6 +130,7 @@ body {
   transform: translateY(-6px) scale(1.01);
   border-color: rgba(255, 179, 59, 0.6);
   box-shadow: 0 22px 50px rgba(0, 0, 0, 0.5), 0 0 22px var(--glow);
+  background: linear-gradient(160deg, rgba(22, 34, 64, 0.94), rgba(12, 18, 36, 0.96));
 }
 
 .botones-juegos button:hover::before {
