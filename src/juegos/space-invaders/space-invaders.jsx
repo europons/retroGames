@@ -4,7 +4,7 @@ import Inicio from './pantallas/inicio.jsx'
 import GameOver from './pantallas/game-over.jsx'
 import Juego from './pantallas/juego.jsx'
 
-export default function App() {
+export default function SpaceInvaders() {
 
   const [partidaEmpezada, setPartidaEmpezada] = useState(false);
   const [puntos, setPuntos] = useState(0);
