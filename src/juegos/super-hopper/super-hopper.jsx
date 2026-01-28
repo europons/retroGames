@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import './super-hopper.css'
 import GameOver from './pantallas/game-over';
-import Juego from './pantallas/juego.jsx';
+import PantallaInicio from './pantallas/pantalla-inicio.jsx';
+import Instrucciones from './componentes/instruciones.jsx';
 
 export default function SuperHopper() {
 
@@ -18,23 +19,31 @@ export default function SuperHopper() {
         setPartidaEmpezada(false);
     }
 
+    // PANTALLA INICIAL
+    if (!partidaEmpezada) {
+        return(
+            <>
+            <PantallaInicio score={score} iniciarPartida={iniciarPartida} />
+            <Instrucciones />
+            </>
+        );
+    }
+
     // PANTALLA GAME OVER
     if (partidaEmpezada && score === 0) {
-        return <GameOver score={score} reiniciarPartida={reiniciarPartida} />
+        return (
+            <>
+            <GameOver score={score} reiniciarPartida={reiniciarPartida} />
+            <Instrucciones />
+            </>
+        );
     }
 
     // PANTALLA DEL JUEGO
     return (
         <>
-            <Juego score={score} />
 
-            <div id="ui-layer">
-                <div id="instructions">
-                    STEPS:
-                    <span className="key">←</span> <span className="key">→</span> MOVE
-                    <span className="key">↑</span> JUMP
-                </div>
-            </div>
+
         </>
     );
 }
