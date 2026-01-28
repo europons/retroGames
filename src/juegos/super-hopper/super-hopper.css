@@ -14,7 +14,7 @@
 
 body {
 	overflow: hidden;
-	background-color: #222;
+	background: #222;
 	font-family: var(--pixel-font);
 }
 
