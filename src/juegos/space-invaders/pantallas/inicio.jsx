@@ -4,10 +4,11 @@ import alien1 from '../imagenes/alien1.webp';
 import alien2 from '../imagenes/alien2.webp';
 import alien3 from '../imagenes/alien3.webp';
 import alienEspecial from '../imagenes/alien-especial.webp';
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import BotonVolver from "../../../componentes/boton-volver";
 
 export default function Inicio({ iniciarPartida }) {
+    const navigate = useNavigate();
 
     const añoActual = new Date().getFullYear();
 
@@ -31,7 +32,7 @@ export default function Inicio({ iniciarPartida }) {
 
     return (
         <div className="pagina-inicial">
-            <BotonVolver onClick={() => Navigate("/")} />
+            <BotonVolver onClick={() => navigate("/")} />
             <div className="contenedor-inicial">
                <h1 className="titulo-inicial">Space Invaders</h1>
                 <img
