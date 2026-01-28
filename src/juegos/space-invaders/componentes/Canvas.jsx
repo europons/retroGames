@@ -649,7 +649,7 @@ export function Canvas(props) {
         iniciarEscudos(); // Inicializar los escudos al montar el componente
 
         // Funcion para actualizar el canvas continuamente
-            const actualizarCanvas = () => {
+        const actualizarCanvas = () => {
             context.clearRect(0, 0, props.width, props.height);
             dibujarRectangulo(context);
 
