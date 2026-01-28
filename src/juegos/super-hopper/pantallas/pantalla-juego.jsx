@@ -6,8 +6,8 @@ const CONFIG = {
 	cameraOffset: { x: 0, y: 7, z: 10 },
 	gravity: 0.015,
 	jumpPower: 0.35,
-	baseSpeed: 0.12,
-	speedInc: 0.00008,
+	baseSpeed: 0.05,
+	speedInc: 0.00004,
 	rowSpacing: 12
 };
 
