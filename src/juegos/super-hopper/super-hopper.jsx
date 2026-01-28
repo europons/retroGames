@@ -4,12 +4,15 @@ import GameOver from './pantallas/game-over';
 import PantallaInicio from './pantallas/pantalla-inicio.jsx';
 import Instrucciones from './componentes/instruciones.jsx';
 import PantallaJuego from './pantallas/pantalla-juego.jsx';
+import BotonVolver from '../../componentes/boton-volver.jsx';
+import { useNavigate } from 'react-router-dom';
 
 export default function SuperHopper() {
 
     const [partidaEmpezada, setPartidaEmpezada] = useState(false);
     const [score, setScore] = useState(0);
     const [finPartida, setFinPartida] = useState(false);
+    const navigate = useNavigate();
 
     // Funciones para manejar el estado del juego
     function iniciarPartida() {
@@ -33,6 +36,7 @@ export default function SuperHopper() {
             <>
                 <PantallaInicio score={score} iniciarPartida={iniciarPartida} />
                 <Instrucciones />
+                <BotonVolver onClick={() => navigate("/")} />
             </>
         );
     }
@@ -43,6 +47,7 @@ export default function SuperHopper() {
             <>
                 <GameOver score={score} reiniciarPartida={reiniciarPartida} />
                 <Instrucciones />
+                <BotonVolver onClick={() => navigate("/")} />
             </>
         );
     }

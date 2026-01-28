@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import naveRota from '../imagenes/nave-rota2.webp';
 import sonidoGameOver from '../sonidos/sonido-game-over.mp3';
+import BotonVolver from "../../../componentes/boton-volver";
+import { useNavigate } from "react-router-dom";
 
 export default function GameOver( props) {
+    const navigate = useNavigate();
 
     // Estado para controlar la animación de la nave
     const [animarNave, setAnimarNave] = useState(false);    
@@ -35,6 +38,7 @@ export default function GameOver( props) {
 
     return (
         <div className="pagina-gameover">
+            <BotonVolver onClick={() => navigate("/")} />
             <h1 className="texto-gameover">Game Over</h1>
 
             <div className="info-gameover">
