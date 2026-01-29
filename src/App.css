@@ -110,14 +110,23 @@ body {
 
 .titulo-principal {
   margin: 0;
-  letter-spacing: 0.12em;
-  font-size: 8rem;
+  letter-spacing: 0.14em;
+  font-size: clamp(3.2rem, 10vw, 8rem);
   font-family: "Orbitron", sans-serif;
   font-weight: 800;
   text-align: center;
+  text-transform: uppercase;
   color: var(--text);
-  text-shadow: 0px 5px 5px var(--accent-2);
-  animation: title-rise 700ms ease-out both;
+  background: linear-gradient(90deg, #8af7ff 0%, #27d9c8 30%, #ffb33b 60%, #ff6bd6 100%);
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.18);
+  text-shadow: 0 0 12px rgba(39, 217, 200, 0.6),
+    0 0 26px rgba(255, 179, 59, 0.45),
+    0 0 46px rgba(255, 107, 214, 0.35);
+  animation: title-rise 700ms ease-out both, neon-shift 6s linear infinite;
   z-index: 1;
 }
 
@@ -218,6 +227,27 @@ body {
   to {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+@keyframes neon-shift {
+  0% {
+    background-position: 0% 50%;
+    text-shadow: 0 0 10px rgba(39, 217, 200, 0.5),
+      0 0 22px rgba(255, 179, 59, 0.35),
+      0 0 40px rgba(255, 107, 214, 0.25);
+  }
+  50% {
+    background-position: 100% 50%;
+    text-shadow: 0 0 16px rgba(39, 217, 200, 0.7),
+      0 0 30px rgba(255, 179, 59, 0.55),
+      0 0 52px rgba(255, 107, 214, 0.4);
+  }
+  100% {
+    background-position: 0% 50%;
+    text-shadow: 0 0 10px rgba(39, 217, 200, 0.5),
+      0 0 22px rgba(255, 179, 59, 0.35),
+      0 0 40px rgba(255, 107, 214, 0.25);
   }
 }
 
