@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div className="app">
-      <h1 className="titulo-principal">RetroGames García</h1>
+      <h1 className="titulo-principal">RetroGames</h1>
 
       <div className="botones-juegos">
         <BotonJuego
@@ -21,7 +21,7 @@ function App() {
         <BotonJuego
           image={portadaHopper}
           title="Super Hopper"
-          onClick={() => navigate("super-hopper")}
+          onClick={() => navigate("/super-hopper")}
         />
       </div>
       <Outlet />
